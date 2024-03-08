@@ -36,7 +36,7 @@ def audiorec_demo_app():
     wav_audio_data = st_audiorec() # tadaaaa! yes, that's it! :D
 
     model = whisper.load_model("base")
-    result = model.transcribe(wav_audio_data) # "audio.wav")
+    result = model.transcribe(st.audio(wav_audio_data, format='audio/wav')) # wav_audio_data) # "audio.wav")
     st.write(result["text"])
 
     # add some spacing and informative messages
